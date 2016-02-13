@@ -4,6 +4,8 @@ from rest_framework.response import Response
 
 from .models import Task
 from api.serializers import TaskSerializer
+from django.http import HttpResponse
+
 
 
 @api_view(['GET', 'POST'])
@@ -52,4 +54,6 @@ def task_detail(request, pk):
     elif request.method == 'DELETE':
         task.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
-# Create your views here.
+
+def index(request):
+    return HttpResponse("Nog even geduld allemaal")
