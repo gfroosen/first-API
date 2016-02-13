@@ -5,6 +5,8 @@ from rest_framework.response import Response
 from .models import Task
 from api.serializers import TaskSerializer
 from django.http import HttpResponse
+from django.shortcuts import render
+
 
 
 
@@ -57,3 +59,8 @@ def task_detail(request, pk):
 
 def index(request):
     return HttpResponse("Nog even geduld allemaal")
+
+
+def list(request):
+        item = Task.objects.order_by('title')
+        return render(request, 'api/test.html', {'item': item} )
