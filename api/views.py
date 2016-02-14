@@ -58,7 +58,7 @@ def task_detail(request, pk):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 def index(request):
-    return HttpResponse("Nog even geduld allemaal")
+    return render(request, 'api/index.html', {})
 
 
 def list(request):
